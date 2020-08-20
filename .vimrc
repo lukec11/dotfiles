@@ -8,10 +8,6 @@ set smartindent
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-
-"Disable auto comment on new line feature
-autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
-
 " Set system copy command
 let g:system_copy#copy_command='xclip -sel clipboard'
 let g:system_copy#paste_command='xclip -sel clipboard -o'
@@ -24,7 +20,6 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -46,9 +41,7 @@ let base16colorspace=256
 " Auto close brackets
 Plugin 'Raimondi/delimitMate'
 au FileType markdown let b:loaded_delimitMate = 0 " no delimitMate for markdown
-au FileType * set fo-=c fo-=r fo-=o " I forget what this does
 filetype plugin indent on
-
 " Prettier
 Plugin 'prettier/vim-prettier'
 
@@ -64,8 +57,7 @@ Plugin 'ycm-core/YouCompleteMe'
 
 "JS linter - Asynchronous Lint Engine
 Plugin 'w0rp/ale'
-let b:ale_fixers = ['prettier', 'eslint']
-let g:ale_fix_on_save = 1
+let b:ale_fixers = ['prettier']
 
 " Always copy to system clipboard
 Plugin 'christoomey/vim-system-copy'
@@ -74,8 +66,6 @@ Plugin 'christoomey/vim-system-copy'
 Plugin 'pangloss/vim-javascript'
 let g:javascript_plugin_jsdoc = 1
 
-" JSDoc support
-Plugin 'heavenshell/vim-jsdoc'
 
 " Rainbow Brackets
 Plugin 'luochen1990/rainbow'
@@ -89,3 +79,5 @@ Plugin 'iamcco/markdown-preview.nvim'
 
 call vundle#end()
 
+"Disable auto comment on new line feature
+setlocal formatoptions-=cro
