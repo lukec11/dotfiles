@@ -28,6 +28,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'benmills/vimux'
 Plugin 'christoomey/vim-tmux-navigator'
 
+" COC.nvim
+Plugin 'neoclide/coc.nvim'
+
 " Base16 Themes
 Plugin 'chriskempson/base16-vim'
 syntax on
@@ -53,7 +56,7 @@ map <C-n> :NERDTreeToggle<CR>
 Plugin 'wakatime/vim-wakatime'
 
 " Autocomplete with YouCompleteMe
-Plugin 'ycm-core/YouCompleteMe'
+"Plugin 'ycm-core/YouCompleteMe'
 
 "JS linter - Asynchronous Lint Engine
 Plugin 'w0rp/ale'
